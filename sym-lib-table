@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name "SIM800L")(type "KiCad")(uri "${KIPRJMOD}/SIM800L-Core-Module-KiCad-Footprint-main/SIM800L.kicad_sym")(options "")(descr ""))
+  (lib (name "DCJ250-10-A_XX-X_REVA")(type "Legacy")(uri "${KIPRJMOD}/DCJ250-10-A_XX-X_REVA/DCJ250-10-A_XX-X_REVA.lib")(options "")(descr ""))
+  (lib (name "B10S_R2_00001")(type "Legacy")(uri "${KIPRJMOD}/B10S/KiCad/B10S_R2_00001.lib")(options "")(descr ""))
+  (lib (name "PJ-002BH")(type "Legacy")(uri "${KIPRJMOD}/PJ-002BH/KiCad/PJ-002BH.lib")(options "")(descr ""))
+)

@@ -1,0 +1,9 @@
+Manufacturer=Phoenix Contact
+PartNumber=1711039
+PartCategory=Connector
+PackageCategory=Other
+PinCount=3
+Version=3.1
+Released=2020-12-03 15:15:10
+Downloaded=2022-11-25 15:26:02
+3D=Y

@@ -1,0 +1,6 @@
+(fp_lib_table
+  (lib (name "SIM800L")(type "KiCad")(uri "${KIPRJMOD}/SIM800L-Core-Module-KiCad-Footprint-main")(options "")(descr ""))
+  (lib (name "DCJ250-10-A_XX-X_REVA")(type "KiCad")(uri "${KIPRJMOD}/DCJ250-10-A_XX-X_REVA")(options "")(descr ""))
+  (lib (name "B10S")(type "KiCad")(uri "${KIPRJMOD}/B10S/KiCad")(options "")(descr ""))
+  (lib (name "PJ-002BH")(type "KiCad")(uri "${KIPRJMOD}/PJ-002BH/KiCad")(options "")(descr ""))
+)
