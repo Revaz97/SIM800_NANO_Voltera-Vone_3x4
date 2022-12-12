@@ -1,5 +1,12 @@
+#include <OneWire.h>
+#include <DallasTemperature.h>
 #include <SoftwareSerial.h>
 #include <avr/wdt.h>
+
+#define ONE_WIRE_BUS 13
+DallasTemperature sensors(&oneWire);
+
+
 SoftwareSerial sim(10, 11);
 String number = "+995577651913";
 
@@ -14,15 +21,33 @@ void setup()
   wdt_enable(WDTO_2S);
   pinMode(5, INPUT);
   pinMode(LED_BUILTIN, OUTPUT);
-  
+  sim.begin();
+  sensors.begin();
+
   
   }
 
 
 void loop() 
 {
-  sim.begin(9600);
-  Serial.println(digitalRead(5));
+
+ Serial.print("Requesting temperatures...");
+ sensors.requestTemperatures();
+ Serial.println("DONE");
+  float tempC = sensors.getTempCByIndex(0);
+  if (tempC != DEVICE_DISCONNECTED_C)
+  {
+    Serial.print("Temperature for the device 1 (index 0) is: ");
+    Serial.println(tempC);
+  }
+  else
+  {
+    Serial.println("Error: Could not read temperature data");
+  }
+}
+
+    
+ Serial.println(digitalRead(5));
   
 
     if (digitalRead(5) == HIGH)
@@ -32,7 +57,7 @@ void loop()
     }
 
     
-if (digitalRead(5) == LOW && b < 5)
+/*if (digitalRead(5) == LOW && b < 5)
  {
   digitalWrite(LED_BUILTIN, LOW);
   wdt_disable();
@@ -44,9 +69,9 @@ if (digitalRead(5) == LOW && b < 5)
       Serial.print("Calling ");
       Serial.println(number);      
       callNumber();
-      delay(75000);
+      delay(5000);
     }
-     
+     */
   }
     delay(100);
     wdt_reset(); 
@@ -58,4 +83,11 @@ void callNumber()
   sim.print (F("ATD"));
   sim.print (number);
   sim.print (F(";\r\n"));
+}
+
+void SendStatusSMS() 
+{
+  sim.print ("AT+CMGF=1");
+  sim.print ("AT+CMGS=\"+995577651913\"");
+  sim.print (status);
 }
