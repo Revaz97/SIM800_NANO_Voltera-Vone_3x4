@@ -1,16 +1,15 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
+
 #include <SoftwareSerial.h>
 #include <avr/wdt.h>
 
 #define Relay1 6
 #define Relay2 7
 #define Mains_sence 5
-
 #define ONE_WIRE_BUS 12
 
 DallasTemperature sensors(&oneWire);
-
 
 SoftwareSerial sim(2, 3);
 String number = "+995577651913";
